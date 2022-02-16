@@ -27,19 +27,36 @@
         }
     ],
 
+    "repositories": {
+        "pragmarx/countries": {
+            "type": "vcs",
+            "url": "https://github.com/BinaryCocoa/php-countries"
+        },
+        "pragmarx/ia-collection": {
+            "type": "vcs",
+            "url": "https://github.com/BinaryCocoa/illuminate-agnostic-collection"
+        },
+        "pragmarx/ia-arr": {
+            "type": "vcs",
+            "url": "https://github.com/BinaryCocoa/illuminate-agnostic-arr"
+        }
+    },
+
     "require": {
-        "php": ">=7.0",
-        "laravel/framework": ">=5.3",
-        "psr/simple-cache": "^1.0",
+        "php": "^8.0",
+        "laravel/framework": "^9.0",
+        "psr/simple-cache": "^3.0",
         "pragmarx/coollection": ">=0.6",
-        "pragmarx/countries": ">=0.5.8"
+        "pragmarx/countries": "dev-master",
+        "pragmarx/ia-collection": "dev-master as 7.999",
+        "pragmarx/ia-arr": "dev-master as 7.999"
     },
 
     "require-dev": {
-        "orchestra/testbench": "~3.0|~4.0|~5.0",
-        "phpunit/phpunit": "~6.0|~7.0|~8.0|~9.0",
+        "orchestra/testbench": "~7.0",
+        "phpunit/phpunit": "~9.0",
         "squizlabs/php_codesniffer": "^2.3",
-        "colinodell/json5": "^1.0",
+        "colinodell/json5": "^2.0",
         "gasparesganga/php-shapefile": "^2.3"
     },
 

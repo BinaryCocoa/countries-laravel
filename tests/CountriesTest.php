@@ -1,9 +1,8 @@
 <?php
 
-namespace PragmaRX\CountriesLaravel\Tests\Service;
+namespace PragmaRX\CountriesLaravel\Tests;
 
 use PragmaRX\CountriesLaravel\Package\Facade as Countries;
-use PragmaRX\CountriesLaravel\Tests\TestCase;
 
 class CountriesTest extends TestCase
 {
@@ -11,14 +10,14 @@ class CountriesTest extends TestCase
     {
         $country = Countries::where('name.common', 'Brazil')->first();
 
-        $this->assertEquals($country->name->common, 'Brazil');
+        $this->assertEquals('Brazil', $country->name->common);
     }
 
     public function testCountryHydration()
     {
         $country = Countries::where('name.common', 'Italy')->first()->hydrateBorders();
 
-        $this->assertEquals($country->name->common, 'Italy');
+        $this->assertEquals('Italy', $country->name->common);
 
         $this->assertEquals(6, $country->borders->count());
 
@@ -90,7 +89,7 @@ class CountriesTest extends TestCase
 
         $results = coollect($results)->sort();
 
-        $this->assertEquals($results->toArray(), [
+        $this->assertEquals([
             'taxes' => 33,
             'geometry map' => 250,
             'topology map' => 250,
@@ -101,7 +100,7 @@ class CountriesTest extends TestCase
             'flags' => 1842,
             'states' => 4526,
             'cities' => 7393,
-            'timezones times' => 79594,
-        ]);
+            'timezones times' => 89297,
+        ], $results->toArray());
     }
 }
